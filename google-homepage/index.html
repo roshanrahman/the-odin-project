@@ -1,0 +1,250 @@
+<!-- Made by Roshan, Completed: August 19. 2018 - 6:01 PM -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+    <title>Google</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+        }
+
+        #icons ul {
+            list-style-type: none;
+        }
+
+        #icons li {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            display: inline;
+            padding-left: 16px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        #icons a {
+            text-decoration: solid;
+            color: black;
+        }
+
+        #icons a:hover {
+            text-decoration: underline;
+            color: grey;
+            cursor: pointer;
+        }
+
+        #icons {
+            right: 0px;
+            position: absolute;
+            width: auto;
+            height: auto;
+            padding-right: 16px;
+        }
+
+        #navbar {
+            position: relative;
+            padding-left: 16px;
+        }
+
+        #profile {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: blueviolet;
+        }
+
+        #body {
+            height: 300px;
+            width: 600px;
+            position: absolute;
+            top: 0;
+            bottom: 200;
+            left: 0;
+            right: 0;
+
+            margin: auto;
+        }
+
+        #logo {
+            text-align: center;
+            display: block;
+            margin: auto;
+            padding-bottom: 16px;
+        }
+
+        #searchbar {
+            width: 500px;
+            border: 1px solid lightgray;
+            margin: auto;
+            padding: 8px;
+            box-shadow: 0 2px 2px 0 rgba(160, 160, 160, 0.048), 0 2px 2px 0 rgba(80, 80, 80, 0.19);
+        }
+
+        #searchbar:hover {
+            box-shadow: 0 2px 2px 1px rgba(97, 97, 97, 0.308), 0 2px 2px 0 rgba(54, 54, 54, 0.19);
+        }
+
+        #textfield {
+            border: none;
+            font-size: 16px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 8px;
+            width: 400px;
+        }
+
+        #textfield:focus {
+            outline: none;
+        }
+
+        #buttons input[type="button"] {
+            background-color: rgb(241, 240, 240);
+            outline: solid;
+            outline-width: 1px;
+            outline-color: transparent;
+            padding: 12px;
+            border: gray;
+            font-weight: bold;
+            color: gray;
+            margin: 4px;
+        }
+
+        #buttons input[type="button"]:hover {
+            background-color: rgb(241, 240, 240);
+            outline-color: gray;
+            font-weight: bold;
+            color: black;
+            box-shadow: 0 2px 2px 0 rgba(160, 160, 160, 0.048), 0 2px 2px 0 rgba(80, 80, 80, 0.19);
+        }
+
+        #buttons {
+            padding: 24px;
+            display: flex;
+            justify-content: center;
+        }
+
+
+        #offered {
+            display: flex;
+            justify-content: center;
+        }
+
+        #footer {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            text-align: left;
+            font-size: 15px;
+            color: rgb(94, 94, 94);
+        }
+
+        #footer #row {
+            padding: 16px;
+            background-color: rgb(226, 226, 226);
+            outline: 1px solid rgb(212, 212, 212);
+            padding-left: 32px;
+        }
+
+        #bottom {
+            padding: 16px;
+            background-color: rgb(226, 226, 226);
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        #bottom a {
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        #bottom a:hover {
+            color: black;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="icons">
+            <ul>
+                <li>
+                    <a href="https://gmail.com/">Gmail</a>
+                </li>
+                <li>
+                    <a href="https://images.google.com/">Images</a>
+                </li>
+                <li>
+                    <img src="assets/menu.svg" class="svg-icon" />
+                </li>
+                <li>
+                    <img src="assets/bell.svg" class="svg-icon" />
+                </li>
+                <li>
+                    <div id="profile"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="body">
+
+        <div id="imageholder">
+            <img src="assets/google.png" id="logo" height="96px" />
+
+        </div>
+        <div id="searchbar">
+            <input type="text" id="textfield" />
+        </div>
+
+        <div id="buttons">
+            <input type="button" value="Google Search" onclick="search();" />
+            <a href="https://www.google.com/doodles/">
+                <input type="button" value="I'm Feeling Lucky"></input>
+            </a>
+        </div>
+
+        <div id="offered">
+            Google offered in: हिन्दी বাংলা తెలుగు मराठी தமிழ் ગુજરાતી ಕನ್ನಡ മലയാളം ਪੰਜਾਬੀ
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <div id="row">
+            India
+        </div>
+        <div id="bottom">
+            <div id="left">
+                <a href="">Advertising</a>
+                <a href="">Business</a>
+                <a href="">About</a>
+            </div>
+            <div id="right">
+                <a href="">Privacy</a>
+                <a href="">Terms</a>
+                <a href="">Settings</a>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+
+    function search() {
+        let s = "https://www.google.com/search?q="
+        let query = document.getElementById("textfield").value;
+        window.location = s + query.replace(/ /g, "+");
+    }
+</script>
+
+</html>
