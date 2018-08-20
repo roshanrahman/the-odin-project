@@ -1,4 +1,4 @@
-# Projects coded as a part of The Odin Project learning
+# Projects coded as a part of The Odin Project
 
 ## Current list of projects available:
 
