@@ -1,50 +1,38 @@
+<!-- Made by Roshan. Completed: 11: 03 PM - 20/08/2018 -->
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/scissors.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script>
-            let computerPlay = function() {
-                let choice = Math.floor(Math.random() * 3);
-                return ['rock', 'paper', 'scissor'][choice];
-            }
-        
-            let round = function(playerSelection, computerSelection) {
-                playerSelection = playerSelection.toLowerCase();
-                computerSelection = computerSelection.toLowerCase();
-                let r = "hello";
-                if(playerSelection === "rock" && computerSelection === "scissor") {
-                    return "You win! Rock beats Scissor";
-                }
-                else if(playerSelection === "rock" && computerSelection === "paper") {
-                    return "You lose! Paper beats Rock";
-                }
-                else if(playerSelection === "scissor" && computerSelection === "rock") {
-                    return "You lose! Rock beats Scissor";
-                }
-                else if(playerSelection === "scissor" && computerSelection === "paper") {
-                    return "You win! Scissor beats Paper";
-                }
-                else if(playerSelection === "paper" && computerSelection === "scissor") {
-                    return "You lose! Scissor beats Paper";
-                }
-                else if(playerSelection === "paper" && computerSelection === "rock") {
-                    return "You win! Paper beats Rock";
-                } else {
-                    return "Draw!";
-                }
-            }
-        
-            let game = function() {
-                for(let i = 0; i < 5; i++) {
-                    console.log(round(prompt("Enter your choice: "), computerPlay()))
-                }
-            }
-        </script>
-    <title>Document</title>
+    <script src="script.js"></script>
+    <title>Rock, Papers, Scissors</title>
 </head>
-<body>
-    
-</body>
-</html>
 
+<body>
+    <div class="main">
+        <div class="header">
+            <h2>Rock, Paper, Scissors</h2>
+        </div>
+        <div class="computer">
+            <p>Click any button to start game</p>
+        </div>
+        <div class="status">
+            <p id="statusText">Game not started</p>
+        </div>
+        <div class="btn-panel">
+            <button onclick="getUserSelection('rock');" class="btn btn-primary">Rock</button>
+            <button onclick="getUserSelection('paper');" class="btn btn-primary">Paper</button>
+            <button onclick="getUserSelection('scissor');" class="btn btn-primary">Scissor</button>
+        </div>
+        <button onclick="resetGame();" class="btn btn-primary btn-block reset">Play Again?</button>
+    </div>
+
+    <div class="record">
+        <h2>Record</h2>
+    </div>
+</body>
+
+</html>
