@@ -1,0 +1,119 @@
+body {
+    background-color: rgb(243, 243, 243);
+
+}
+
+* {
+    user-select: none;
+}
+.calculator {
+    display:grid;
+    grid-template-columns: repeat(4, 0fr);
+    grid-template-rows: repeat(5, 0fr);
+    margin: 32px auto;
+    width: 430px;
+}
+
+.display {
+    grid-row: 1;
+    grid-column: 1 / 5;
+    background-color:#FFFFFF;
+    color: #828282;
+    height: 80px;
+    font-family: Roboto Light, sans-serif;
+    font-size: 64px;
+    line-height: 80px;
+    padding: 16px;
+    text-align: right;
+}
+
+
+
+.number {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-family: Roboto Light, sans-serif;
+    font-size: 42px;
+    background-color: #434343;
+    color: #A9A9A9;
+    cursor: pointer;
+}
+
+.number:hover {
+    background-color: #4b4b4b;
+}
+
+.equals:hover {
+    background-color: #4b4b4b;
+}
+
+.operator {
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-family: Roboto Light, sans-serif;
+    font-size: 32px;
+    background-color: #636363;
+    color: #A9A9A9;
+    cursor: pointer;
+}
+
+.operator:hover {
+    background-color: #696969;
+}
+
+.operator:active {
+    background-color: #535353;
+}
+
+.equals {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    background-color: #434343;
+    color: #A9A9A9;
+    text-align: center;
+    line-height: 100px;
+    font-family: Roboto Light, sans-serif;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.equals:active {
+    background-color: #3b3b3b;
+}
+
+.number:active {
+    background-color: #3b3b3b;
+}
+
+h1 {
+    font-family: Roboto Thin;
+    font-weight: normal;
+    font-size: 88px;
+    color: gray;
+    margin: 8px;
+    text-align: center;
+}
+
+h2 {
+    font-family: Roboto Medium;
+    font-weight: normal;
+    font-size: 16px;
+    color: gray;
+    margin: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 16px;
+    text-align: center;
+    width:100%;
+    font-family: Roboto, sans-serif;
+    color:gray; 
+  }
