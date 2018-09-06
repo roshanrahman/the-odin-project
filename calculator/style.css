@@ -5,6 +5,7 @@ body {
 
 * {
     user-select: none;
+    transition: all 0.07s ease;
 }
 .calculator {
     display:grid;
