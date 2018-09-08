@@ -12,6 +12,7 @@ body {
     grid-template-columns: repeat(4, 0fr);
     grid-template-rows: repeat(5, 0fr);
     margin: 32px auto;
+    margin-top:8px;
     width: 430px;
 }
 
@@ -118,3 +119,16 @@ h2 {
     font-family: Roboto, sans-serif;
     color:gray; 
   }
+
+  .expression {
+      margin: 16px;
+      text-align: center;
+      padding:16px;
+      margin-bottom: 0px;
+      font-family: Roboto Mono, monospace;
+      color:gray;
+      text-transform: uppercase;
+      font-size: 14px;
+      height:10px;
+  }
+

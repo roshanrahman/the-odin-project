@@ -25,7 +25,7 @@ numberBtns.forEach(numberBtn => {
 
 operatorBtns.forEach(operatorBtn => {
       operatorBtn.addEventListener("click", () => {
-        handleOperatorClick(event.target);
+        handleOperatorClick(event.target.getAttribute("value"));
         console.log("You clicked: " + event.target.getAttribute("value"));
     });
 })
@@ -40,6 +40,10 @@ delBtn.addEventListener("click", ()=> {
     currentOp = null;
     expressionString = "";
     display.textContent = "";
+});
+
+document.addEventListener("keypress", ()=> {
+    handleKeyPress(event);
 });
 
 function handleNumberClick(number) {
@@ -57,24 +61,18 @@ function handleNumberClick(number) {
 }
 
 function handleOperatorClick(operator) {
-    
-    if(op1 === null) {
+    if(op1 == null) {
         op1 = Number(expressionString);
-        currentOp = operator.getAttribute("value");
+        currentOp = operator;
         expressionString = "";
-    } else if(op1 !== null && op2 === null) {
-        op1 = getResult(op1, op2, operator.getAttribute("value")); 
+    } else { 
         op2 = Number(expressionString);
-        currentOp = operator.getAttribute("value");
-        expressionString = "";
-
-    } else if(op1 !== null && op2 !== null) {
-        op1 = getResult(op1, op2, operator.getAttribute("value"));
-        currentOp = operator.getAttribute("value");
-        expressionString = "";
-        op2 = null;
+            op1 = getResult(op1, op2, currentOp);
+            currentOp = operator;
+            expressionString = "";
     }
     logValues();
+    
 }
 
 function handleEqualsClick() {
@@ -91,8 +89,8 @@ function handleEqualsClick() {
 }
 
 function getResult(op1, op2, operator) {
-    if(op2 == null) {
-        return op1;
+    if(op2 == null || op1 == null) {
+        return;
     }
     op1 = Number(op1);
     op2 = Number(op2);
@@ -108,4 +106,29 @@ function getResult(op1, op2, operator) {
     if(operator === "*") {
         return op1 * op2;
     }
+}
+
+function handleKeyPress(keyEvent) {
+    let keyPressed = String(keyEvent.key);
+    console.log(keyPressed);
+    if(['1','2','3','4','5','6','7','8','9','0'].includes((keyPressed))) {
+        expressionString += keyPressed;
+        display.textContent = expressionString;
+    } else {
+        if(keyPressed == '.') {
+            expressionString += keyPressed;
+        } else {
+        if(['+', '-','/', '*'].includes(keyPressed)) {
+            handleOperatorClick(keyPressed);
+        } else if(['=', 'Enter'].includes(keyPressed)) {
+            handleEqualsClick();
+        } else if(['Backspace', 'Delete'].includes(keyPressed)) {
+            expressionString = "";
+            display.textContent = expressionString;
+            op1 = null;
+            op2 = null;
+            currentOp = null;
+        }
+    }
+}
 }
