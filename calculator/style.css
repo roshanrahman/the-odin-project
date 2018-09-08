@@ -132,7 +132,7 @@ h2 {
       height:10px;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 800px) {
     /* For mobile phones: */
     .footer, h1, h2 {
         display: none;
