@@ -134,11 +134,31 @@ h2 {
 
   @media only screen and (max-width: 800px) {
     /* For mobile phones: */
-    .footer, h1, h2 {
+    
+    body, * {
+        margin:0px;
+        padding: 0px;
+    }
+
+    h1, h2 {
         display: none;
     }
 
     .calculator {
-        margin: 0px;
+        margin: 16px auto;
+        padding: 8px;
+        width: fit-content;
     }
+
+    .operator, .number {
+        width:80px;
+        height: 80px;
+        font-size: 30px;
+        line-height: 75px;
+    }
+    .equals {
+        height: 80px;
+        line-height: 75px;
+    }
+
 }
